@@ -59,7 +59,7 @@ class Render(object):
 		new_x = round((x+1)*(self.vpWidth/2)+self.vpx)
 		new_y = round((y+1)*(self.vpHeight/2)+self.vpy)
 		#Linea 59 y 58 basadas en https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glViewport.xhtml
-		self.framebuffer[new_y][new_x] = self.curr_color
+		self.framebuffer[new_x][new_y] = self.curr_color
 	
 	def glColor(self, r=1, g=1, b=1):
 		red = round(r*255)
@@ -91,9 +91,9 @@ class Render(object):
 		f.write(dword(0))
 
 		# pixel data
-		for x in range(self.width):
-			for y in range(self.height):
-				f.write(self.framebuffer[y][x])
+		for x in range(self.height):
+			for y in range(self.width):
+				f.write(self.framebuffer[x][y])
 
 
 		f.close()
