@@ -1,3 +1,7 @@
+"""
+Paula Camila Gonzalez Ortega
+18398
+"""
 from funciones_gl import Render, changecolor
 
 posX = 250
